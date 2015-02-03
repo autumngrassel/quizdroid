@@ -5,7 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_view_questions">View Question</string>
     <string name="title_activity_topic_overview">Topic Overview</string>
-    <string name="topic_heading">Topic</string>
     <string name="begin_quiz">Begin</string>
     <string name="submit">Submit</string>
     <string name="title_activity_review_answers">Answer Summary</string>
