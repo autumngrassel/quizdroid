@@ -9,11 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -140,7 +138,7 @@ public class ViewQuestions extends ActionBarActivity {
         View view = null;
 
         if (id != 0) {
-            view = (View) findViewById(id);
+            view = findViewById(id);
         }
 
         return view;

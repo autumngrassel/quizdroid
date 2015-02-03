@@ -96,7 +96,7 @@ public class ReviewAnswers extends ActionBarActivity {
         View view = null;
 
         if (id != 0) {
-            view = (View) findViewById(id);
+            view = findViewById(id);
         }
 
         return view;

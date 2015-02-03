@@ -39,7 +39,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         final ListView chooseTopic = (ListView) findViewByIdName("topicList");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, topicNames);
 
         chooseTopic.setAdapter(adapter);
@@ -66,19 +66,16 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         );
-
-
     }
     private Topic getQuestions(Context ctx, int resId, String topicName) {
         InputStream inputStream = ctx.getResources().openRawResource(resId);
 
         InputStreamReader inputReader = new InputStreamReader(inputStream);
         BufferedReader bufferedreader = new BufferedReader(inputReader);
-        String line;
+        String question;
         Topic topic = new Topic(topicName);
         try {
-            while ((line = bufferedreader.readLine()) != null) {
-                String question = line;
+            while ((question = bufferedreader.readLine()) != null) {
                 String[] answers = {bufferedreader.readLine(), bufferedreader.readLine(),
                         bufferedreader.readLine(), bufferedreader.readLine()};
                 topic.addQuestion(question, answers);
@@ -166,7 +163,7 @@ public class MainActivity extends ActionBarActivity {
         View view = null;
 
         if (id != 0) {
-            view = (View) findViewById(id);
+            view = findViewById(id);
         }
 
         return view;
