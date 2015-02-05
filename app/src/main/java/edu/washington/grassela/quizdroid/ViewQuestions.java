@@ -44,7 +44,7 @@ public class ViewQuestions extends ActionBarActivity {
                 (RadioButton) findViewByIdName("radio3"),
                 (RadioButton) findViewByIdName("radio4"),
         };
-        int correctAnswer = (int) (Math.floor(Math.random() * 4));
+        final int correctAnswer = (int) (Math.floor(Math.random() * 4));
         final String[] answerOrder = new String[4];
         int index = 1;
         for (int i = 0; i < options.length; i++) {
@@ -60,16 +60,19 @@ public class ViewQuestions extends ActionBarActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String correctAnswer = answerChoices[0];
                 questionNum++;
-                boolean correct = answerChoices[0].equals(answerOrder[chosenIndex]);
+                boolean correct = correctAnswer.equals(answerOrder[chosenIndex]);
                 if (correct) {
                     numCorrect++;
                 }
                 Intent nextActivity = new Intent(ViewQuestions.this, ReviewAnswers.class);
                 nextActivity.putStringArrayListExtra("questionList", questionList);
+                nextActivity.putExtra("correctAnswer", correctAnswer);
                 nextActivity.putExtra("questionNum", questionNum);
                 nextActivity.putExtra("numCorrect", numCorrect);
                 nextActivity.putExtra("quizFinished", questionNum == questionList.size());
+                nextActivity.putExtra("isCorrect", correct);
                 startActivity(nextActivity);
                 finish();
             }

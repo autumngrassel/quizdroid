@@ -28,14 +28,25 @@ public class ReviewAnswers extends ActionBarActivity {
         questionNum = launchedMe.getIntExtra("questionNum", 0);
         numCorrect = launchedMe.getIntExtra("numCorrect", 0);
         questionList = launchedMe.getStringArrayListExtra("questionList");
+        String correctAnswer = launchedMe.getStringExtra("correctAnswer");
+        boolean isCorrect = launchedMe.getBooleanExtra("isCorrect", false);
         final boolean quizOver = launchedMe.getBooleanExtra("quizFinished", false);
+
+        String feedback;
+        if (isCorrect) {
+            feedback = "You got it right!";
+        } else {
+            feedback = "Better luck next time. \nThe correct answer was: " + correctAnswer;
+        }
+
+        TextView fbck = (TextView) findViewByIdName("fbck");
+        fbck.setText(feedback);
 
         String displayText = "You have answered " + numCorrect + " out of " +
                 questionNum + " questions correctly";
 
         TextView message = (TextView) findViewByIdName("message");
         message.setText(displayText);
-
 
         Button next = (Button) findViewByIdName("next");
         if (quizOver) {
