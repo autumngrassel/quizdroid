@@ -18,6 +18,15 @@ public class TopicOverview extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topic_overview);
 
+        if (savedInstanceState == null) { // if Application ever fired up before, is this the first time we're firing it up
+            // r.id.container is where you want the fragment to be inserted
+            TopicOverviewFragment overview = new TopicOverviewFragment();
+            overview.setArguments(getIntent().getExtras());
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.topic_overview, overview).commit();
+
+        }
+
         final Intent launchedMe = getIntent();
         String topic = launchedMe.getStringExtra("topic");
         TextView heading = (TextView) findViewByIdName("topicHeading");
