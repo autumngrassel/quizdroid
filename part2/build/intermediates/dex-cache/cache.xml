@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part2/app/build/intermediates/pre-dexed/debug/classes-b58410f6d540c42b7ee07e87d8ea30b899489296.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part2/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part2/app/build/intermediates/pre-dexed/debug/classes-b56b1433ba97df62d2bb07ba115380857c4aa56c.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-3292fcddfb368b6ad6224d0924770c84ed1b0e01.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-2d540f17e79feec7751dc0050869517c3f024d7a.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/pre-dexed/debug/classes-fdc8c02f8e3db00ac74aa0ccf9e639c219877006.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/app/build/intermediates/pre-dexed/debug/classes-7be38e742b5d522598dffb546c541e46128dc179.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part2/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part2/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-76b9b70f3d49383114c40b945d527142889a4b2d.jar" />
+    </item>
+
+</items>
