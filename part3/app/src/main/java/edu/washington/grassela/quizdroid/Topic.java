@@ -10,6 +10,7 @@ public class Topic implements Serializable {
     private String longDesc;
     private List<Question> questions;
     private int numQuestions;
+    private int imageId;
 
     public Topic() { }
 
@@ -55,5 +56,12 @@ public class Topic implements Serializable {
         return numQuestions;
     }
 
+    public void setImageId(int id) {
+        imageId = id;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
 
 }

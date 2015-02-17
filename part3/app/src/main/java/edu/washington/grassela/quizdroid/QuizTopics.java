@@ -35,6 +35,7 @@ public class QuizTopics implements TopicRepository {
             currentTopic.setShortDesc(shortDesc[i]);
             currentTopic.setLongDesc(longDesc[i]);
             setQuestions(resourceFiles[i], currentTopic);
+            currentTopic.setImageId(R.drawable.ic_launcher);
             topics.add(currentTopic);
         }
     }

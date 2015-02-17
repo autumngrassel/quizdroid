@@ -26,16 +26,12 @@ public class MainActivity extends ActionBarActivity {
 
         final List<Topic> topics = app.getRepo();
         String[] topicNames = new String[topics.size()];
+        Integer[] images = new Integer[topics.size()];
         for (int i = 0; i < topics.size(); i++) {
             topicNames[i] = topics.get(i).getTopic();
+            images[i] = topics.get(i).getImageId();
         }
         final ListView chooseTopic = (ListView) findViewById(R.id.topicList);
-
-        Integer[] images = {
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher
-        };
 
         CustomList adapter = new CustomList(MainActivity.this, topicNames, images);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
