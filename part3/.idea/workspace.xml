@@ -43,23 +43,23 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.807693" vertical-offset="128" max-vertical-offset="1290">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state vertical-scroll-proportion="-4.3461537" vertical-offset="262" max-vertical-offset="1290">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1410#1892#0" expanded="true" />
-                <element signature="e#1877#1878#0" expanded="true" />
-                <element signature="e#2672#2673#0" expanded="true" />
-                <element signature="e#2732#2733#0" expanded="true" />
+                <element signature="e#1448#1930#0" expanded="true" />
+                <element signature="e#1915#1916#0" expanded="true" />
+                <element signature="e#2710#2711#0" expanded="true" />
+                <element signature="e#2770#2771#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.640648" vertical-offset="0" max-vertical-offset="679">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
               <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
@@ -81,7 +81,7 @@
       <file leaf-file-name="QuizApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.538462" vertical-offset="7" max-vertical-offset="660">
+            <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="660">
               <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,23 +106,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuizTopics.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="QuizTopics.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizTopics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="1365">
-              <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.18018018" vertical-offset="255" max-vertical-offset="1365">
+              <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#379#380#0" expanded="true" />
                 <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#1632#1633#0" expanded="true" />
-                <element signature="e#1675#1676#0" expanded="true" />
-                <element signature="e#1713#1714#0" expanded="true" />
-                <element signature="e#1742#1743#0" expanded="true" />
-                <element signature="e#2769#2770#0" expanded="true" />
-                <element signature="e#2808#2809#0" expanded="true" />
-                <element signature="e#2860#2861#0" expanded="true" />
-                <element signature="e#2892#2893#0" expanded="true" />
+                <element signature="e#1604#1605#0" expanded="true" />
+                <element signature="e#1647#1648#0" expanded="true" />
+                <element signature="e#1685#1686#0" expanded="true" />
+                <element signature="e#1714#1715#0" expanded="true" />
+                <element signature="e#2741#2742#0" expanded="true" />
+                <element signature="e#2780#2781#0" expanded="true" />
+                <element signature="e#2832#2833#0" expanded="true" />
+                <element signature="e#2864#2865#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -731,9 +731,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_single.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/CustomList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/Topic.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizTopics.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizTopics.java" />
       </list>
     </option>
   </component>
@@ -1070,7 +1070,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="110" y="23" width="1072" height="877" extended-state="1" />
+    <frame x="110" y="23" width="1072" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1205,66 +1205,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/CustomList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.538462" vertical-offset="7" max-vertical-offset="660">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#725#726#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizTopics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="1365">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#1632#1633#0" expanded="true" />
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1713#1714#0" expanded="true" />
-            <element signature="e#1742#1743#0" expanded="true" />
-            <element signature="e#2769#2770#0" expanded="true" />
-            <element signature="e#2808#2809#0" expanded="true" />
-            <element signature="e#2860#2861#0" expanded="true" />
-            <element signature="e#2892#2893#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.807693" vertical-offset="128" max-vertical-offset="1290">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1410#1892#0" expanded="true" />
-            <element signature="e#1877#1878#0" expanded="true" />
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2732#2733#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/TopicRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
@@ -1305,9 +1245,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.640648" vertical-offset="0" max-vertical-offset="679">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
           <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/CustomList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3461537" vertical-offset="262" max-vertical-offset="1290">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1448#1930#0" expanded="true" />
+            <element signature="e#1915#1916#0" expanded="true" />
+            <element signature="e#2710#2711#0" expanded="true" />
+            <element signature="e#2770#2771#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="660">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#725#726#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/washington/grassela/quizdroid/QuizTopics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18018018" vertical-offset="255" max-vertical-offset="1365">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#1604#1605#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1685#1686#0" expanded="true" />
+            <element signature="e#1714#1715#0" expanded="true" />
+            <element signature="e#2741#2742#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2832#2833#0" expanded="true" />
+            <element signature="e#2864#2865#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

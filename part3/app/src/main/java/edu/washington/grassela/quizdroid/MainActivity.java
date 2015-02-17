@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
         String[] topicNames = new String[topics.size()];
         Integer[] images = new Integer[topics.size()];
         for (int i = 0; i < topics.size(); i++) {
-            topicNames[i] = topics.get(i).getTopic();
+            topicNames[i] = topics.get(i).getTopic() + "\n" + topics.get(i).getShortDesc();
             images[i] = topics.get(i).getImageId();
         }
         final ListView chooseTopic = (ListView) findViewById(R.id.topicList);

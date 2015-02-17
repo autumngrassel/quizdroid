@@ -23,8 +23,8 @@ public class QuizTopics implements TopicRepository {
         int[] resourceFiles = {R.raw.math, R.raw.physics, R.raw.marvel};
         Log.d("yup", Arrays.toString(resourceFiles));
         String[] shortDesc = {"Test your math problem solving skills",
-                "Questions about Physics knowledge and theories",
-                "Questions for the comic book fans"};
+                "How well do you Physics?",
+                "Calling all comic book fans"};
         String[] longDesc = {"Contains various math story problems and basic geometry terms and questions.",
                 "Test your physics trivia with questions about common theories.",
                 "Find out just how well you know your superheroes (and villains)."};
