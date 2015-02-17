@@ -30,7 +30,15 @@ public class MainActivity extends ActionBarActivity {
             topicNames[i] = topics.get(i).getTopic();
         }
         final ListView chooseTopic = (ListView) findViewById(R.id.topicList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+
+        Integer[] images = {
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher,
+            R.drawable.ic_launcher
+        };
+
+        CustomList adapter = new CustomList(MainActivity.this, topicNames, images);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, topicNames);
 
         chooseTopic.setAdapter(adapter);
