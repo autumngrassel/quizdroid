@@ -1,14 +1,17 @@
 package edu.washington.grassela.quizdroid;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.List;
 
@@ -16,6 +19,11 @@ import java.util.List;
 public class MainActivity extends ActionBarActivity {
 
     protected QuizApp app;
+    private PendingIntent pendingIntent;
+    private AlarmManager manager;
+    private Intent alarmIntent;
+    private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
+    private int time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +31,22 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         app = (QuizApp) getApplication();
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        String timeLapse = prefs.getString("time", "");
+        try {
+            time = Integer.parseInt(timeLapse);
+        } catch (NumberFormatException nfe) {
+            time = 5;
+        }
+
+        alarmIntent = new Intent(this, AlarmReceiver.class);
+        pendingIntent = PendingIntent.getBroadcast(MainActivity.this, 0, alarmIntent, 0);
+        manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        startAlarm();
+
+
 
         final List<Topic> topics = app.getRepo();
         String[] topicNames = new String[topics.size()];
@@ -34,8 +58,8 @@ public class MainActivity extends ActionBarActivity {
         final ListView chooseTopic = (ListView) findViewById(R.id.topicList);
 
         CustomList adapter = new CustomList(MainActivity.this, topicNames, images);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, topicNames);
+        // ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
+                //android.R.layout.simple_list_item_1, android.R.id.text1, topicNames);
 
         chooseTopic.setAdapter(adapter);
 
@@ -50,6 +74,25 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         );
+
+
+        prefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
+                if (key.equals("timeLapse")) {
+                    String timeLapse = prefs.getString(key, "");
+                    try {
+                        time = Integer.parseInt(timeLapse);
+                    } catch (NumberFormatException nfe) {
+                        time = 5;
+                    }
+                    restartAlarm();
+                }
+
+
+
+            }
+        };
+        prefs.registerOnSharedPreferenceChangeListener(prefListener);
     }
 
     @Override
@@ -61,20 +104,45 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_preferences:
+                openPrefs();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    public void startAlarm() {
+        long interval = time * 60 * 1000;
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
+    }
+
+    public void cancelAlarm() {
+        if (manager != null) {
+            manager.cancel(pendingIntent);
+        }
+    }
+
+    public void restartAlarm() {
+        while (AlarmReceiver.isInProgress()) {
+            //do nothing
+        }
+        cancelAlarm();
+        startAlarm();
+    }
+
+    public void openPrefs() {
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
     }
 
     public Context getContext() {
-        return (Context) app.getApplicationContext();
+        return app.getApplicationContext();
+    }
+
+    @Override
+    public void onDestroy() {
+        cancelAlarm();
     }
 }

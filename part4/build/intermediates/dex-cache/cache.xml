@@ -9,6 +9,13 @@
         <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part3/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-cb51402cbde2bf7dacb6321a8535cbc35783691c.jar" />
     </item>
     <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part4/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part4/app/build/intermediates/pre-dexed/debug/classes-05738ac05c0042624c13e3b16403c35c0f42916a.jar" />
+    </item>
+    <item
         jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part3/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -21,6 +28,20 @@
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
         <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part3/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-2d540f17e79feec7751dc0050869517c3f024d7a.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part4/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part4/app/build/intermediates/pre-dexed/debug/classes-b5417a99ecd2953e4e5f137cd0a57161e34e55d1.jar" />
+    </item>
+    <item
+        jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part4/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part4/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5309e61b6eb88d6c75d02dc0832a786aeabb011f.jar" />
     </item>
     <item
         jar="/Users/autumngrassel/Desktop/INFO-498/quizdroid/part3/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"

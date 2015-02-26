@@ -9,5 +9,9 @@
     <string name="submit">Submit</string>
     <string name="title_activity_quiz_activity">Quiz Activity</string>
     <string name="title_activity_review_answers">La</string>
+    <string name="action_preferences">Preferences</string>
+    <string name="title_activity_settings_activity">Preferences</string>
+    <string name="default_url">http://tednewardsandbox.site44.com/questions.json</string>
+    <string name="default_time">5</string>
 
 </resources>

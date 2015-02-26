@@ -1,7 +1,12 @@
 /part1/local.properties
 /part2/local.properties
 /part3/local.properties
+/part4/local.properties
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
 /build
+/part1/build
+/part2/build
+/part3/build
+/part4/build

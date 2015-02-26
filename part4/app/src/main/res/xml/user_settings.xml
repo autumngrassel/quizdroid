@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Preferences" >
+        <EditTextPreference
+            android:title="URL"
+            android:summary="URL for question data"
+            android:defaultValue="@string/default_url"
+            android:key="prefURL"/>
+        <EditTextPreference
+            android:title="Minutes"
+            android:defaultValue="@string/default_time"
+            android:summary="How often to check downloads"
+            android:key="timeLapse"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
