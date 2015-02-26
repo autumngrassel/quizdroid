@@ -14,7 +14,8 @@ public class QuizTopics implements TopicRepository {
     private List<Topic> topics;
 
     public QuizTopics()  {
-        topics = createTopics();
+        InputStream inputStream = QuizApp.getAppContext().getResources().openRawResource(R.raw.quizdata);
+        topics = createTopics(inputStream);
     }
 
     public List<Topic> readTopicsArray(JsonReader reader) throws IOException {
@@ -93,9 +94,8 @@ public class QuizTopics implements TopicRepository {
         return topic;
     }
 
-    public List<Topic> createTopics() {
+    public List<Topic> createTopics(InputStream inputStream) {
         try {
-            InputStream inputStream = QuizApp.getAppContext().getResources().openRawResource(R.raw.quizdata);
             JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
             return readTopicsArray(reader);
         } catch (IOException e) {
