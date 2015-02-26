@@ -1,13 +1,19 @@
 package edu.washington.grassela.quizdroid;
 
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
     private Intent alarmIntent;
     private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
     private int time;
+    static boolean isAirplaneEnabled;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,49 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         app = (QuizApp) getApplication();
+
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        isAirplaneEnabled = Settings.System.getInt(getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0) == 1;
+        if (!isConnected && isAirplaneEnabled) {
+            Log.i("TAG", "No connection currently");
+            // To-do: send to prefs to change
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+
+            dlgAlert.setMessage("This application requires an internet connection :( \n" +
+                    "Would you like to turn Airplane Mode off so that you can use the application?");
+            dlgAlert.setTitle("Airplane Mode On");
+            dlgAlert.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    // go to Prefs
+                }
+            });
+            dlgAlert.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            dlgAlert.setCancelable(false);
+            dlgAlert.create().show();
+        } else if (!isConnected && !isAirplaneEnabled) {
+            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+
+            dlgAlert.setMessage("This application requires an internet connection :( \n" +
+                    "You can try again later once you have a connection!");
+            dlgAlert.setTitle("No Connection");
+            dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    finish();
+                }
+            });
+            dlgAlert.setCancelable(false);
+            dlgAlert.create().show();
+        }
+
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -58,8 +108,6 @@ public class MainActivity extends ActionBarActivity {
         final ListView chooseTopic = (ListView) findViewById(R.id.topicList);
 
         CustomList adapter = new CustomList(MainActivity.this, topicNames, images);
-        // ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
-                //android.R.layout.simple_list_item_1, android.R.id.text1, topicNames);
 
         chooseTopic.setAdapter(adapter);
 
@@ -86,7 +134,12 @@ public class MainActivity extends ActionBarActivity {
                         time = 5;
                     }
                     restartAlarm();
+                } else if (key.equals("url")) {
+                    restartAlarm();
+                } else { // key.equals("airplane")
+                    // set airplane mode to opposite
                 }
+
 
 
 
@@ -134,7 +187,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void openPrefs() {
-        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+        startActivity(new Intent(MainActivity.this, PreferencesActivity.class));
     }
 
     public Context getContext() {
