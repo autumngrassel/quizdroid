@@ -46,6 +46,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                         int columnIndex = c
                                 .getColumnIndex(DownloadManager.COLUMN_STATUS);
                         if (DownloadManager.STATUS_SUCCESSFUL == c.getInt(columnIndex)) {
+                            Log.i("SUCCESS", "woogoo");
 
                             String uriString = c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
 
@@ -67,38 +68,48 @@ public class AlarmReceiver extends BroadcastReceiver {
                                 fos.write(string.getBytes());
                                 fos.close();
                                 InputStream input = QuizApp.getAppContext().openFileInput("quizdata.json");
-                                QuizTopics.createTopics(input);
+                                QuizTopics.getInstance().createTopics(input);
+                                Log.i("HI", "new topics");
 
                             } catch (IOException e) {
 
                             }
+                            inProgress = false;
 
                         } else if (DownloadManager.STATUS_FAILED == c.getInt(columnIndex)) {
+                            Log.i("download", "FAILLLLL");
                             //display message
-                            AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(context);
-
-                            dlgAlert.setMessage("Download failed :( \n" +
+                            AlertDialog.Builder failedDownload  = new AlertDialog.Builder(QuizApp.getAppContext());
+                            failedDownload.setMessage("Download failed :( \n" +
                                     "Would you like to retry or quit and try again later?");
-                            dlgAlert.setTitle("Download failed");
-                            dlgAlert.setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                            failedDownload.setTitle("Download failed");
+                            failedDownload.setPositiveButton("Retry", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     //retry download
+                                    inProgress = true;
                                     String oldURL = PreferenceManager.getDefaultSharedPreferences(QuizApp.getAppContext())
                                             .getString("prefURL", "http://tednewardsandbox.site44.com/questions.json");
                                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(oldURL));
                                     enqueue = dm.enqueue(request);
                                 }
                             });
-                            dlgAlert.setNegativeButton("Quit", new DialogInterface.OnClickListener() {
+                            failedDownload.setNegativeButton("Quit", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     System.exit(0);
                                 }
                             });
-                            dlgAlert.setCancelable(false);
-                            dlgAlert.create().show();
+                            failedDownload.setCancelable(false);
+                            AlertDialog dialog = failedDownload.create();
+                            try {
+                                dialog.show();
+                            } catch (Exception e) {
+
+                            }
                         }
                     }
                 }
+                inProgress = false;
+                dm.remove(enqueue);
             }
         };
 
@@ -115,14 +126,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                 "http://tednewardsandbox.site44.com/questions.json");
 
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        Log.i("HI", "Made request");
         enqueue = dm.enqueue(request);
-
-
-
-
-
-
-        inProgress = false;
 
 
     }

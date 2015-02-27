@@ -2,6 +2,7 @@ package edu.washington.grassela.quizdroid;
 
 import android.util.JsonReader;
 import android.util.JsonToken;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,11 +13,28 @@ import java.util.List;
 public class QuizTopics implements TopicRepository {
 
     private List<Topic> topics;
+    private static QuizTopics instance;
 
     public QuizTopics()  {
+        instance = this;
         InputStream inputStream = QuizApp.getAppContext().getResources().openRawResource(R.raw.quizdata);
-        topics = createTopics(inputStream);
+        createTopics(inputStream);
     }
+
+    public static QuizTopics getInstance() {
+        return instance;
+    }
+
+    public void createTopics(InputStream inputStream) {
+        try {
+            JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
+            topics = readTopicsArray(reader);
+            Log.i("HI", "updated topics!");
+        } catch (IOException e) {
+            topics = null;
+        }
+    }
+
 
     public List<Topic> readTopicsArray(JsonReader reader) throws IOException {
         List<Topic> topic = new ArrayList<Topic>();
@@ -94,14 +112,6 @@ public class QuizTopics implements TopicRepository {
         return topic;
     }
 
-    public List<Topic> createTopics(InputStream inputStream) {
-        try {
-            JsonReader reader = new JsonReader(new InputStreamReader(inputStream, "UTF-8"));
-            return readTopicsArray(reader);
-        } catch (IOException e) {
-            return null;
-        }
-    }
 
     public Topic getTopic(int topicNum) {
         return topics.get(topicNum);

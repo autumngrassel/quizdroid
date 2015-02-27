@@ -179,6 +179,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void restartAlarm() {
+        Log.i("HI", "Tried to restart the alarm");
         while (AlarmReceiver.isInProgress()) {
             //do nothing
         }
